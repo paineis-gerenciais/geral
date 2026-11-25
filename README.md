@@ -12,7 +12,7 @@ Publicação: GitHub Pages → https://paineis-gerenciais.github.io/geral/
 
 ## Arquivos
 
-- `index.html` — a capa (HTML + CSS, sem JavaScript). Os botões são feitos em código, não em imagem.
+- `index.html` — a capa (HTML + CSS). Os botões são feitos em código, não em imagem. Um trecho curto de JavaScript, no fim do arquivo, sorteia a frase do alto a cada acesso.
 - `ARTE.md` — sugestão de arte e prompts para os símbolos e fundos da capa e dos menus Jogos e Apps.
 - `assets/` — criar quando a arte ficar pronta (`simbolo.webp` e `fundo.webp`).
 
@@ -20,6 +20,11 @@ Publicação: GitHub Pages → https://paineis-gerenciais.github.io/geral/
 
 Cada botão é um `<li>` em `index.html`. O nome fica em `class="nome"`, a frase em `class="linha"` e o endereço em `href`.
 Os endereços são relativos (`../jogos/`): funcionam enquanto os quatro menus estiverem na mesma conta.
+
+## Trocar as frases do alto
+
+As frases ficam na lista `frases`, no fim do `index.html`. Cada acesso sorteia uma.
+Para incluir ou tirar uma frase, edite a lista. A primeira também fica escrita no `<h1 id="frase">`: é a que aparece se o JavaScript estiver desligado.
 
 ## Colocar a arte
 

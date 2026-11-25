@@ -97,8 +97,8 @@
     box-shadow: 0 0 16px rgba(246, 220, 154, .4);
     pointer-events: none;
   }
-  .botao:hover { transform: translateY(-3px) scale(1.02); filter: brightness(1.1); }
-  .botao:active { transform: translateY(0) scale(.99); }
+  a.botao:hover { transform: translateY(-3px) scale(1.02); filter: brightness(1.1); }
+  a.botao:active { transform: translateY(0) scale(.99); }
   .botao:focus-visible, .voltar:focus-visible { outline: 3px solid var(--texto); outline-offset: 3px; }
   .icone {
     flex: none; display: grid; place-items: center;
@@ -115,6 +115,19 @@
   .nome {
     font-size: 29px; font-weight: 800; letter-spacing: -.01em; color: var(--ouro-claro);
     text-shadow: 0 2px 3px rgba(0, 0, 0, .35);
+  }
+  .nome.longo { font-size: 24px; }
+  /* ---------- Em breve: botão sem clique, em cor apagada, com selo ---------- */
+  .azul.breve  { --escuro: #2b3050; --medio: #5a628f; --sombra: rgba(60, 66, 110, .2); }
+  .verde.breve { --escuro: #243d36; --medio: #55857a; --sombra: rgba(50, 90, 78, .2); }
+  .breve { cursor: default; }
+  .breve .icone, .breve .nome { opacity: .82; }
+  .selo {
+    position: absolute; top: 9px; right: 11px; z-index: 2;
+    padding: 3px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+    color: #3a2a05; background: linear-gradient(135deg, var(--ouro-claro), var(--ouro));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
   }
   footer { text-align: center; font-size: 13px; padding: 0 16px 20px; color: var(--texto-suave); }
 
@@ -162,17 +175,27 @@
     <path d="M24 56l36 13 36-13v2c0 23-15 38-36 45-21-7-36-22-36-45z" fill="#12825f"/>
   </svg>
   <p class="sobretitulo">Menu geral</p>
-  <h1>O que você quer abrir?</h1>
+  <h1 id="frase">Qual porta vamos abrir hoje?</h1>
 </header>
 <main>
   <nav aria-label="Menus">
     <ul class="grade">
       <li><a class="botao porta vinho" href="../menu/"><span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M7.5 20v-5M12 20V9M16.5 20v-8"/><path d="M5 9.5l4.5-3.5 3 2L18.5 4M15.5 4h3v3"/></svg></span><span class="rotulo"><span class="nome">Painéis Gerenciais</span><span class="linha">Projetos, processos, riscos e pessoas na gestão pública.</span></span><span class="abrir" aria-hidden="true">Abrir →</span></a></li>
       <li><a class="botao porta azul" href="../jogos/"><span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3.6"/><circle class="cheio" cx="8.6" cy="8.6" r="1.25"/><circle class="cheio" cx="12" cy="12" r="1.25"/><circle class="cheio" cx="15.4" cy="15.4" r="1.25"/><circle class="cheio" cx="15.4" cy="8.6" r="1.25"/><circle class="cheio" cx="8.6" cy="15.4" r="1.25"/></svg></span><span class="rotulo"><span class="nome">Jogar e aprender</span><span class="linha">Jogos e modelos de ciência para abrir no navegador.</span></span><span class="abrir" aria-hidden="true">Abrir →</span></a></li>
-      <li><a class="botao porta verde" href="../apps/"><span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.8"/><path d="M14.2 16.6l1.7 1.7 3.2-3.4"/></svg></span><span class="rotulo"><span class="nome">Apps do dia a dia</span><span class="linha">Receitas, compras, viagens e outras ajudas.</span></span><span class="abrir" aria-hidden="true">Abrir →</span></a></li>
+      <li><a class="botao porta verde" href="../apps/"><span class="icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.8"/><path d="M14.2 16.6l1.7 1.7 3.2-3.4"/></svg></span><span class="rotulo"><span class="nome">Apps do dia a dia</span><span class="linha">Receitas, finanças, treinos e outras ajudas.</span></span><span class="abrir" aria-hidden="true">Abrir →</span></a></li>
     </ul>
   </nav>
 </main>
 <footer>Menu geral</footer>
+<script>
+  // Sorteia uma das frases a cada acesso. Sem JavaScript, fica a primeira.
+  var frases = [
+    "Qual porta vamos abrir hoje?",
+    "Trabalhar, jogar ou resolver a vida?",
+    "Hoje é dia de quê?",
+    "Escolha a sua aventura de hoje"
+  ];
+  document.getElementById("frase").textContent = frases[Math.floor(Math.random() * frases.length)];
+</script>
 </body>
 </html>
