@@ -25,11 +25,11 @@ A marca dos Painéis Gerenciais (símbolo, assinaturas, ícones, cores e regras)
 
 ## Símbolos
 
-Todos são feitos de blocos de cantos arredondados, como o símbolo dos Painéis.
+Três deles são feitos de blocos de cantos arredondados, como o símbolo dos Painéis. O dos jogos tem um conceito mais tecnológico, escolhido em 2026-11-26.
 
 - **Capa:** quatro blocos, um de cada cor da família (vinho, azul, verde e dourado).
 - **Painéis Gerenciais:** o mosaico da marca, com blocos que sobem como um gráfico.
-- **Jogar e aprender:** um dado azul, com o ponto do meio em dourado.
+- **Jogar e aprender:** um dado em 3D feito só de linhas, com os nós em dourado, dentro de um quadrado azul-marinho, como ícone de aplicativo.
 - **Apps do dia a dia:** quatro blocos em grade, um deles com o sinal de "feito".
 
 ## Prompts dos fundos (para o ChatGPT)
