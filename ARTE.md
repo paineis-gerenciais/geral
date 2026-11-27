@@ -1,85 +1,104 @@
-# Arte da capa e dos menus Jogos e Apps
+# Arte da capa e dos menus
 
-Sugestão de arte e prompts para gerar os símbolos e as imagens de fundo.
-As páginas já funcionam sem essas imagens: hoje usam símbolos desenhados em código e um fundo liso.
+Os quatro menus (Painéis Gerenciais, capa, Jogar e aprender, Apps do dia a dia) seguem o mesmo estilo sóbrio da marca dos Painéis Gerenciais: formas lisas, sem brilho e sem efeito 3D, fundo marfim, e o dourado só como detalhe.
 
-## Ideia geral
+## O que é feito em código e o que é imagem
 
-Os três menus novos são da mesma família do menu dos Painéis Gerenciais:
-emblema 3D brilhante com borda dourada, fundo claro com formas de vidro e botões escuros com filete de ouro.
-O que muda de um menu para o outro é a cor.
+| Peça | Como é feita |
+|---|---|
+| Símbolo de cada menu | Em código (vetor), já dentro de cada página e no `favicon.svg`. Não precisa de imagem. |
+| Botões | Em código. Incluir um projeto é uma linha no `index.html`. |
+| Imagem de fundo | Única peça gerada no ChatGPT, com os prompts abaixo. As quatro imagens foram aplicadas em 2026-11-27 (`assets/fundo.webp` na capa, nos jogos e nos apps; `assets/fundo-sobrio.webp` no menu dos Painéis). |
 
-| Página | Cor principal | Símbolo | Fundo |
-|---|---|---|---|
-| Capa (`geral`) | as três cores juntas, sobre marfim | escudo com três facetas: vinho, azul e verde | painéis de vidro nas três cores, com um gráfico, um dado e blocos de app ao longe |
-| Jogar e aprender (`jogos`) | azul-royal `#2f45b8` e azul-noite `#111a55` | dado azul com um anel de órbita dourado (jogo + ciência) | dado, peças de tabuleiro, torre de castelo, bola de futebol americano e planeta com anel |
-| Apps do dia a dia (`apps`) | verde-esmeralda `#12825f` e verde-escuro `#073f31` | quatro blocos arredondados, um deles com um "feito" | panela, cesta de compras, alfinete de mapa, prancheta e gráfico de pizza |
-| Painéis Gerenciais (`menu`, já existe) | vinho `#8b0a0a` | escudo com gráfico (logo atual) | fundo atual |
+A marca dos Painéis Gerenciais (símbolo, assinaturas, ícones, cores e regras) fica no repositório `padroes`, pasta `marca/`.
 
-O ouro `#d4a24c` aparece em todas as páginas e é o que amarra a família.
+## Cores
 
-O escudo da capa repete a forma do escudo da logo dos Painéis Gerenciais. Assim a capa "contém" os três menus, e os Painéis continuam com a logo deles.
+| Uso | Cor |
+|---|---|
+| Painéis Gerenciais | Vinho `#6e1420` |
+| Jogar e aprender | Azul-marinho `#23346b` |
+| Apps do dia a dia | Verde-escuro `#1f5244` |
+| Textos e apoio | Grafite `#24272e` |
+| Detalhe | Dourado fosco `#b0904f` |
+| Fundo | Marfim `#f6f3ee` |
 
-## Como gerar
+## Símbolos
 
-- Anexe a logo e o fundo atuais dos Painéis Gerenciais (`menu/assets/logo.webp` e `menu/assets/fundo.webp`) como referência de estilo, se a ferramenta aceitar imagem de referência.
-- Nenhuma imagem leva texto. Os títulos e os nomes dos botões são escritos pela página.
-- Gere cada prompt separado. Todos já trazem a descrição completa do estilo.
+Três deles são feitos de blocos de cantos arredondados, como o símbolo dos Painéis. O dos jogos tem um conceito mais tecnológico, escolhido em 2026-11-26.
 
-| Imagem | Formato ao gerar | Como salvar |
-|---|---|---|
-| Símbolo | quadrado, 1024 × 1024, fundo transparente | `assets/simbolo.webp`, com 512 px de lado |
-| Fundo | paisagem 16:9, cerca de 2400 × 1350 | `assets/fundo.webp`, com 1920 px de largura e até 300 KB |
+- **Capa:** quatro blocos, um de cada cor da família (vinho, azul, verde e dourado).
+- **Painéis Gerenciais:** o mosaico da marca, com blocos que sobem como um gráfico.
+- **Jogar e aprender:** um dado em 3D feito só de linhas, com os nós em dourado, dentro de um quadrado azul-marinho, como ícone de aplicativo.
+- **Apps do dia a dia:** quatro blocos em grade, um deles com o sinal de "feito".
 
-Cada repositório (`geral`, `jogos`, `apps`) recebe o seu par de imagens na pasta `assets/`. O README de cada um diz as duas linhas que mudam no `index.html`.
+## Prompts dos fundos (para o ChatGPT)
 
-## Prompts dos símbolos
+Cada prompt pede elementos ligados aos projetos daquele menu e usa a folha da marca do grupo como referência.
 
-### 1. Símbolo da capa
+Como usar:
 
-```
-Emblema 3D brilhante em forma de escudo, estilo logotipo corporativo premium. O escudo é dividido em três facetas esmaltadas: vermelho-vinho escuro no alto à esquerda, azul-royal no alto à direita e verde-esmeralda na parte de baixo, separadas por filetes finos de ouro polido. Borda larga do escudo em ouro polido com chanfro. Superfícies lisas com reflexos suaves, luz de estúdio vinda do alto à esquerda, sombra suave embaixo. Vista frontal, centralizado, com margem em volta. Fundo transparente. Sem texto, sem letras, sem números, sem pessoas.
-```
+- Anexe a folha da marca indicada em cada prompt. Ela dá o estilo e as cores.
+- Peça em formato paisagem, o mais largo que a ferramenta permitir.
+- Se os elementos saírem fortes demais, peça em seguida: "Deixe os elementos mais claros e o centro ainda mais vazio".
+- Salve com 1920 px de largura e até 300 KB. O README de cada repositório diz o nome do arquivo e a linha que muda no `index.html`.
 
-### 2. Símbolo de "Jogar e aprender"
+### 1. Fundo do menu dos Painéis Gerenciais
 
-```
-Emblema 3D brilhante, estilo logotipo corporativo premium: um dado de jogo com cantos bem arredondados, em esmalte azul-royal com degradê para azul-noite, levemente inclinado, com os pontos e a borda em ouro polido. Um anel fino de órbita, também em ouro, passa em volta do dado, com uma pequena esfera dourada presa ao anel, como um planeta e sua lua. Superfícies lisas com reflexos suaves, luz de estúdio vinda do alto à esquerda, sombra suave embaixo. Vista frontal, centralizado, com margem em volta. Fundo transparente. Sem texto, sem letras, sem números, sem pessoas.
-```
-
-### 3. Símbolo de "Apps do dia a dia"
-
-```
-Emblema 3D brilhante, estilo logotipo corporativo premium: quatro blocos quadrados de cantos bem arredondados, dispostos em grade dois por dois, como ícones de aplicativo. Três blocos em esmalte verde-esmeralda com degradê para verde-escuro. O quarto bloco, embaixo à direita, é branco perolado e traz um sinal de "feito" (check) em verde-esmeralda. Todos com borda em ouro polido com chanfro. Superfícies lisas com reflexos suaves, luz de estúdio vinda do alto à esquerda, sombra suave embaixo. Vista frontal, centralizado, com margem em volta. Fundo transparente. Sem texto, sem letras, sem números, sem pessoas.
-```
-
-## Prompts dos fundos
-
-### 4. Fundo da capa
+Anexar: `padroes/marca/folha-da-marca.png`.
+Elementos ligados a: Gestão de Projetos, Organograma, Processos, Matriz de Risco, Cadeia de Valor e Simulador de Carreiras.
 
 ```
-Imagem de fundo horizontal 16:9, muito clara e suave, em tons de branco e marfim. Formas 3D de vidro translúcido e acrílico fosco, concentradas nas bordas e nos cantos: painéis curvos e arcos em três cores discretas, vermelho-vinho, azul-royal e verde-esmeralda, com filetes finos de ouro polido. Ao longe e desfocados, três objetos pequenos de vidro: um gráfico de barras vinho, um dado azul e uma grade de blocos verdes. O centro da imagem fica vazio e limpo, quase branco, para receber botões por cima. Luz difusa, profundidade de campo rasa, acabamento elegante e corporativo. Sem texto, sem letras, sem pessoas, sem logotipos.
+Use a folha da marca anexada só como referência de estilo e de cores: formas lisas, cantos levemente arredondados, sem brilho e sem efeito 3D. Não copie a folha e não reproduza o símbolo, o nome nem nenhum texto dela.
+
+Crie uma imagem de fundo horizontal, em formato paisagem, para uma página de menu, em estilo sóbrio, minimalista e plano. Fundo marfim claro (#f6f3ee). A imagem traz, de forma discreta, elementos do trabalho de gestão: barras de gráfico de alturas diferentes; um organograma de caixas ligadas por linhas finas; um fluxo de processo, com caixas e setas; uma grade de três por três casas, como uma matriz de risco; setas em forma de divisa, lado a lado, como uma cadeia de valor; e degraus subindo, como uma carreira.
+
+Os desenhos são simples e planos, como papel recortado em camadas, com sombra muito suave. A maior parte deles fica em tons de marfim e cinza-claro, quase da cor do fundo. Poucos elementos em vinho escuro (#6e1420) e em grafite (#24272e), e um único detalhe pequeno em dourado fosco (#b0904f). Os elementos ficam concentrados nos cantos e nas bordas da imagem, alguns cortados pela borda. O centro fica vazio e liso, para receber botões por cima. Sem brilho, sem reflexo, sem efeito 3D chamativo, sem degradê forte, sem texto, sem letras, sem números, sem pessoas, sem logotipos.
 ```
 
-### 5. Fundo de "Jogar e aprender"
+### 2. Fundo da capa
+
+Anexar as três folhas: `padroes/marca/folha-da-marca.png`, `jogos/marca/folha-da-marca.png` e `apps/marca/folha-da-marca.png`.
+Elementos ligados a: um pouco de cada menu, cada grupo na sua cor.
 
 ```
-Imagem de fundo horizontal 16:9, muito clara e suave, em tons de branco e azul bem pálido. Formas 3D de vidro translúcido e acrílico fosco em azul-royal, com filetes finos de ouro polido, concentradas nas bordas e nos cantos: um dado, peças de tabuleiro, uma torre de castelo, uma bola de futebol americano e um planeta com anel e pequenas luas em órbita. Arcos finos dourados lembram órbitas. O centro da imagem fica vazio e limpo, quase branco, para receber botões por cima. Luz difusa, profundidade de campo rasa, acabamento elegante. Sem texto, sem letras, sem números, sem pessoas, sem logotipos.
+Use as três folhas de marca anexadas só como referência de estilo e de cores: formas lisas, cantos levemente arredondados, sem brilho e sem efeito 3D. Não copie as folhas e não reproduza os símbolos, os nomes nem nenhum texto delas.
+
+Crie uma imagem de fundo horizontal, em formato paisagem, para uma página de menu, em estilo sóbrio, minimalista e plano. Fundo marfim claro (#f6f3ee). A imagem traz três grupos discretos de elementos, um em cada região da borda. À esquerda, em vinho escuro (#6e1420): barras de gráfico e um organograma de caixas ligadas por linhas. Em cima, à direita, em azul-marinho (#23346b): um dado em perspectiva desenhado só com linhas e uma torre de castelo. Embaixo, à direita, em verde-escuro (#1f5244): blocos em grade como ícones de aplicativo, uma panela e um alfinete de mapa.
+
+Os desenhos são simples e planos, como papel recortado em camadas, com sombra muito suave. A maior parte deles fica em tons de marfim e cinza-claro, quase da cor do fundo. Em cada grupo, só um ou dois elementos levam a cor do grupo. Há um único detalhe pequeno em dourado fosco (#b0904f) na imagem toda. Os elementos ficam concentrados nos cantos e nas bordas da imagem, alguns cortados pela borda. O centro fica vazio e liso, para receber botões por cima. Sem brilho, sem reflexo, sem efeito 3D chamativo, sem degradê forte, sem texto, sem letras, sem números, sem pessoas, sem logotipos.
 ```
 
-### 6. Fundo de "Apps do dia a dia"
+### 3. Fundo de "Jogar e aprender"
+
+Anexar: `jogos/marca/folha-da-marca.png`.
+Elementos ligados a: FA Manager, Torres do Reino, Quadra, Órbitas, Rachess e Bancada, além do dado do símbolo.
 
 ```
-Imagem de fundo horizontal 16:9, muito clara e suave, em tons de branco e verde bem pálido. Formas 3D de vidro translúcido e acrílico fosco em verde-esmeralda, com filetes finos de ouro polido, concentradas nas bordas e nos cantos: uma panela com vapor, uma cesta de compras, um alfinete de mapa, uma prancheta com lista marcada e um gráfico de pizza. Arcos finos dourados ligam os objetos. O centro da imagem fica vazio e limpo, quase branco, para receber botões por cima. Luz difusa, profundidade de campo rasa, acabamento elegante e acolhedor. Sem texto, sem letras, sem números, sem pessoas, sem logotipos.
+Use a folha da marca anexada só como referência de estilo e de cores: formas lisas, cantos levemente arredondados, sem brilho e sem efeito 3D. Não copie a folha e não reproduza o símbolo, o nome nem nenhum texto dela.
+
+Crie uma imagem de fundo horizontal, em formato paisagem, para uma página de menu, em estilo sóbrio, minimalista e plano. Fundo marfim claro (#f6f3ee). A imagem traz, de forma discreta, elementos de jogos e de ciência: uma bola de futebol americano; uma torre de castelo; uma grade de quatro por quatro cartões em branco; um planeta com anéis de órbita em linhas finas; peças de xadrez, como um peão e um cavalo; um frasco de laboratório e um pêndulo; e um dado em perspectiva, desenhado só com linhas e com pequenos nós nos cantos. Alguns desses elementos são formas cheias e outros são desenhos só de linhas finas, como modelos de computador.
+
+Os desenhos são simples e planos, como papel recortado em camadas, com sombra muito suave. A maior parte deles fica em tons de marfim e cinza-claro, quase da cor do fundo. Poucos elementos em azul-marinho (#23346b) e em grafite (#24272e), e alguns nós e um único detalhe pequeno em dourado fosco (#b0904f). Os elementos ficam concentrados nos cantos e nas bordas da imagem, alguns cortados pela borda. O centro fica vazio e liso, para receber botões por cima. Sem brilho, sem reflexo, sem efeito 3D chamativo, sem degradê forte, sem texto, sem letras, sem números, sem pessoas, sem logotipos.
 ```
 
-## Extra: botão da calculadora no menu dos Painéis
+### 4. Fundo de "Apps do dia a dia"
 
-O menu dos Painéis usa botões em imagem. Para a calculadora entrar lá, falta a arte deste botão.
-Anexe um botão atual (por exemplo `menu/assets/btn-matriz-risco.webp`) como referência.
+Anexar: `apps/marca/folha-da-marca.png`.
+Elementos ligados a: A Gosto, Compra Planejada, Plano Viagem Certa, Carteira, Prancheta e Organizador Pessoal.
 
 ```
-Botão horizontal na proporção 3:1, no mesmo estilo da imagem de referência: fundo vermelho-vinho escuro brilhante com degradê, borda fina em ouro, arco dourado no canto inferior direito. À esquerda, um quadro de cantos arredondados com um ícone dourado de escada de degraus subindo com uma seta para cima. Um traço vertical dourado separa o ícone do texto. À direita, o texto em duas linhas: "Simulador de" em branco, menor, e "Carreiras" em dourado, maior e em negrito. Mesma fonte, mesmas proporções e mesmo brilho da referência. Fundo transparente fora do botão.
+Use a folha da marca anexada só como referência de estilo e de cores: formas lisas, cantos levemente arredondados, sem brilho e sem efeito 3D. Não copie a folha e não reproduza o símbolo, o nome nem nenhum texto dela.
+
+Crie uma imagem de fundo horizontal, em formato paisagem, para uma página de menu, em estilo sóbrio, minimalista e plano. Fundo marfim claro (#f6f3ee). A imagem traz, de forma discreta, elementos da rotina de casa: uma panela com colher; uma cesta de compras; um alfinete de mapa e uma mala de viagem; um gráfico de pizza com algumas moedas; um halter e uma prancheta de treino; e uma lista de tarefas com itens marcados, feita só de traços, sem letras. Entre eles, blocos quadrados dispostos em grade, como ícones de aplicativo.
+
+Os desenhos são simples e planos, como papel recortado em camadas, com sombra muito suave. A maior parte deles fica em tons de marfim e cinza-claro, quase da cor do fundo. Poucos elementos em verde-escuro (#1f5244) e em grafite (#24272e), e um único detalhe pequeno em dourado fosco (#b0904f). Os elementos ficam concentrados nos cantos e nas bordas da imagem, alguns cortados pela borda. O centro fica vazio e liso, para receber botões por cima. Sem brilho, sem reflexo, sem efeito 3D chamativo, sem degradê forte, sem texto, sem letras, sem números, sem pessoas, sem logotipos.
 ```
 
-Salvar como `btn-simulador-carreiras.webp`, com 720 × 240 px.
+## Simulação da marca aplicada (opcional)
+
+Serve para apresentar a marca, não como arquivo final. Anexe `padroes/marca/png/assinatura-horizontal.png`.
+
+```
+Foto realista e sóbria de um cartão de visita e de um caderno de capa lisa sobre uma mesa de madeira clara, com luz natural suave. Aplique a marca da imagem anexada no cartão e na capa do caderno, sem alterar as formas, as cores, as proporções nem as letras da marca. Paleta do ambiente em marfim, grafite e vinho escuro. Sem outros textos e sem outras marcas.
+```

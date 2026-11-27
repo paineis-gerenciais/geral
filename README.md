@@ -12,9 +12,10 @@ Publicação: GitHub Pages → https://paineis-gerenciais.github.io/geral/
 
 ## Arquivos
 
-- `index.html` — a capa (HTML + CSS). Os botões são feitos em código, não em imagem. Um trecho curto de JavaScript, no fim do arquivo, sorteia a frase do alto a cada acesso.
-- `ARTE.md` — sugestão de arte e prompts para os símbolos e fundos da capa e dos menus Jogos e Apps.
-- `assets/` — criar quando a arte ficar pronta (`simbolo.webp` e `fundo.webp`).
+- `index.html` — a capa (HTML + CSS). Os botões e os símbolos são feitos em código, não em imagem. Um trecho curto de JavaScript, no fim do arquivo, sorteia a frase do alto a cada acesso.
+- `favicon.svg` — ícone da aba do navegador.
+- `ARTE.md` — estilo dos quatro menus, cores e prompts das imagens de fundo.
+- `assets/fundo.webp` — imagem de fundo.
 
 ## Trocar um texto ou um endereço
 
@@ -26,10 +27,10 @@ Os endereços são relativos (`../jogos/`): funcionam enquanto os quatro menus e
 As frases ficam na lista `frases`, no fim do `index.html`. Cada acesso sorteia uma.
 Para incluir ou tirar uma frase, edite a lista. A primeira também fica escrita no `<h1 id="frase">`: é a que aparece se o JavaScript estiver desligado.
 
-## Colocar a arte
+## Imagem de fundo
 
-1. Salve as imagens em `assets/simbolo.webp` (512 px de lado) e `assets/fundo.webp` (1920 px de largura).
-2. No alto do `index.html`, troque `--fundo: none;` por `--fundo: url("assets/fundo.webp");`.
-3. Troque o bloco `<svg class="simbolo">…</svg>` pela linha `<img>` que está no comentário logo acima dele.
+O fundo é a imagem `assets/fundo.webp`, com um véu marfim por cima para não disputar com os botões. O prompt que gerou a imagem está no `ARTE.md` do repositório `geral`.
 
-Se o fundo ficar forte demais atrás dos botões, aumente o último número de `--veu` (de `.62` para `.75`, por exemplo).
+- **Trocar a imagem:** salve a nova por cima de `assets/fundo.webp` (1920 px de largura, até 300 KB).
+- **Clarear ou escurecer:** no alto do `index.html`, mude o último número de `--veu`. Mais perto de `1` clareia; mais perto de `0` mostra mais a imagem.
+- **Tirar a imagem:** no alto do `index.html`, troque o valor de `--fundo` por `none`. O fundo volta ao marfim liso.
