@@ -8,7 +8,7 @@ Os quatro menus (Painéis Gerenciais, capa, Jogar e aprender, Apps do dia a dia)
 |---|---|
 | Símbolo de cada menu | Em código (vetor), já dentro de cada página e no `favicon.svg`. Não precisa de imagem. |
 | Botões | Em código. Incluir um projeto é uma linha no `index.html`. |
-| Imagem de fundo | Única peça que vale gerar no ChatGPT. Os prompts estão abaixo. É opcional: sem ela, o fundo é marfim liso. |
+| Imagem de fundo | Única peça gerada no ChatGPT, com os prompts abaixo. As quatro imagens foram aplicadas em 2026-11-27 (`assets/fundo.webp` na capa, nos jogos e nos apps; `assets/fundo-sobrio.webp` no menu dos Painéis). |
 
 A marca dos Painéis Gerenciais (símbolo, assinaturas, ícones, cores e regras) fica no repositório `padroes`, pasta `marca/`.
 
